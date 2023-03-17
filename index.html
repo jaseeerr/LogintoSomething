@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gradient-custom {
+/* fallback for old browsers */
+background: #6a11cb;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+    </style>
+</head>
+<body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+      
+                  <div class="mb-md-5 mt-md-4 pb-5">
+      
+                    <h2 class="fw-bold mb-2 text-uppercase" id="text">Login</h2>
+                    <p class="text-white-50 mb-5" id="text1">Please enter your username and password!</p>
+      
+                    <div class="form-outline form-white mb-4">
+                        
+                        
+                      <input type="email" id="email" required class="form-control form-control-lg" placeholder="Email" />
+                      <input type="email" id="email1" disabled style="display: none;" class="form-control form-control-lg" placeholder="                       @#*#%@^&#@" />
+                     
+                    </div>
+      
+                    <div class="form-outline form-white mb-4">
+                        <h5 style="color: rgb(236, 52, 52);display: none;" id="text3" >You shouldn't have clicked that button.</h5>
+                      <input type="text" id="box" required class="form-control form-control-lg" placeholder="Password" />
+                      <input type="text" id="box1" disabled style="display: none;"  class="form-control form-control-lg" placeholder="Have you ever thought of killing yourself?" />
+                      <input type="text" id="box2" disabled style="display: none;"  class="form-control form-control-lg" placeholder="                 CLICK LOGIN ANYWAYS!" />
+
+                    </div>
+      
+                    <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#" id="forgotBtn">Forgot password?</a></p>
+                    <div>
+                        <p id="forgot" style="display:none;">Sorry can't do anything about it ^_^</p>
+                    </div>
+      
+                    <button class="btn btn-outline-light btn-lg px-5" id="loginBtn" type="submit">Login</button>
+      
+                    <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                      <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                      <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                      <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                    </div>
+      
+                  </div>
+      
+                  <div>
+                    <p class="mb-0" id="text2">Don't have an account? <a href="#" id="signupBtn" class="text-white-50 fw-bold">Sign Up</a>
+                        <p id="signup" style="display:none;">Just kidding nobody wants you to sign up.</p>
+                    </p>
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <script>
+
+//variables
+let ready = false
+//forgot Btn function
+
+
+
+        document.getElementById('forgotBtn').onclick = function(){
+
+            document.getElementById('forgot').style.display = "block"
+
+            setTimeout(function() {
+                document.getElementById('forgot').style.display = "none"
+}, 1800); // waits for 3 seconds before logging "Timeout complete!"
+
+        }
+
+
+
+//Signup btn function  
+
+
+        document.getElementById('signupBtn').onclick = function(){
+
+document.getElementById('signup').style.display = "block"
+
+setTimeout(function() {
+    document.getElementById('signup').style.display = "none"
+}, 1800); // waits for 3 seconds before logging "Timeout complete!"
+
+}
+
+//email btn function
+          
+document.getElementById('email').onclick = function(){
+    ready = false
+
+document.getElementById('email').style.display = "none"
+
+document.getElementById('email1').style.display = "block"
+
+document.getElementById('box').style.display = "none"
+
+document.getElementById('box1').style.display = "block"
+
+setTimeout(function() {
+   
+
+
+
+document.getElementById('box1').style.display = "none"
+
+document.getElementById('box2').style.display = "block"
+ready = true
+}, 2500);
+ // waits for 3 seconds before logging "Timeout complete!"
+
+}
+
+//Password btn function
+
+document.getElementById('box').onclick = function(){
+
+    document.getElementById('email').click()
+}
+
+
+//login btn function
+
+document.getElementById('loginBtn').onclick = function(){
+
+    if(ready)
+    {
+        document.getElementById('email').style.display = "none"
+
+        document.getElementById('email1').style.display = "none"
+
+        document.getElementById('box').style.display = "none"
+
+        document.getElementById('box1').style.display = "none"
+
+        document.getElementById('signupBtn').style.display = "none"
+
+        document.getElementById('forgotBtn').style.display = "none"
+
+        document.getElementById('text').style.display = "none"
+
+        document.getElementById('text1').style.display = "none"
+
+        document.getElementById('text2').style.display = "none"
+
+        document.getElementById('loginBtn').style.display = "none"
+
+        document.getElementById('text2').style.display = "none"
+
+        document.getElementById('box2').style.display = "none"
+
+        document.getElementById('text3').style.display = "block"
+
+        setTimeout(function() {
+            window.location.replace('https://jaseeerr.github.io/SeeYouSoon/')
+}, 1000)
+    }
+
+    
+}
+
+
+
+
+      </script>
+</body>
+</html>
